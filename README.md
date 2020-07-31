@@ -9,7 +9,7 @@ Run **python3 bid_predictor.py**
 ***Neural_Network()*** for test2_EUR2USD bid price:
 ![image](https://github.com/vincent51689453/Foreign_Exchange_Predictor/blob/master/output/dataset_test2/AI_output.png)
 
-***Neural_Network_v2()*** for test2_EUR2USD bid price: for test3_EUR2USD bid price:
+***Neural_Network_v2()*** for test3_EUR2USD bid price: for test3_EUR2USD bid price:
 ![image](https://github.com/vincent51689453/Foreign_Exchange_Predictor/blob/master/output/dataset_test3/ai_output.png)
 
 
