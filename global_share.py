@@ -1,7 +1,7 @@
 #csv format: DateTime | Bid | Ask | Volume
 #data_path = 'E:/OS_Share/008-FinTech/dataset/20200703_20200505_EUR2USD.csv'
-data_path = 'E:/OS_Share/008-FinTech/dataset/test2_EUR2USD.csv'
-
+#data_path = 'E:/OS_Share/008-FinTech/dataset/test2_EUR2USD.csv'
+data_path = 'E:/OS_Share/008-FinTech/dataset/test3_EUR2USD.csv'
 #Raw data from csv
 raw_data = []
 #Only contain bid data (1d np.array) 

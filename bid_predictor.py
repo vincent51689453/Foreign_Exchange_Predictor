@@ -40,7 +40,7 @@ def display_raw_bid_data(data_list,order,enable):
         #print(data_list)
         fig = plt.figure(figsize=(15,8))
         plt.title('Raw Bid Data of EURUSD')
-        plt.scatter(order, data_list, color='r')   
+        plt.scatter(order, data_list, color='r',s=2)   
         plt.show()
 
 
@@ -90,8 +90,8 @@ def split_bid_data(num_data):
 
     fig = plt.figure(figsize=(15,8))
     plt.title('Data Distribution')
-    plt.scatter(gs.time_line, gs.bid_data_ready, c='blue', label='Market')
-    plt.scatter(gs.x_train, gs.y_train, c='red', label='train')
+    plt.scatter(gs.time_line, gs.bid_data_ready, c='blue', label='Market',s=2)
+    plt.scatter(gs.x_train, gs.y_train, c='red', label='train',s=2)
     #plt.scatter(x_test, y_test, c='red', label='validation',s = 2)
     plt.legend()
     plt.show()
@@ -117,7 +117,7 @@ def main():
     loss_function = tf.keras.losses.MeanSquaredError()
 
     #Create Network
-    model = Neural_Network()
+    model = Neural_Network_v2()
 
     # fit the model on the training dataset
     lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
@@ -127,6 +127,7 @@ def main():
         staircase=True)
 
     opt = keras.optimizers.Adam(learning_rate=lr_schedule)
+    #opt = keras.optimizers.SGD(learning_rate=lr_schedule)
     model.compile(loss=loss_function, optimizer=opt)
     history = model.fit(gs.x_train, gs.y_train, epochs=gs.epoches, batch_size=gs.batch_size, validation_data=(gs.x_test, gs.y_test), verbose=2)
 
@@ -149,7 +150,7 @@ def main():
     fig = plt.figure(figsize=(15,8))
     plt.title('AI Prediction of EURUSD')
     plt.scatter(gs.time_line, gs.bid_data_ready, c='green', label='Market',s=2)
-    plt.scatter(gs.time_line, y_pred, c='red', label='AI-Prediction',s=4)
+    plt.scatter(gs.time_line, y_pred, c='red', label='AI-Prediction',s=2)
     plt.legend()
     plt.grid
     plt.show()
